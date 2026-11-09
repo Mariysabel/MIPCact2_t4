@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de materias</title>
+</head>
+
+<body>
+
+    <h1>Lista de materias</h1>
+
+    <ul>
+        <li th:each="materia : ${materias}">
+
+            <strong th:text="${materia.nombre}"></strong>
+
+            <p th:text="${materia.desc}"></p>
+
+            <p>
+                Créditos:
+                <span th:text="${materia.credit}"></span>
+            </p>
+
+        </li>
+    </ul>
+
+</body>
+</html>

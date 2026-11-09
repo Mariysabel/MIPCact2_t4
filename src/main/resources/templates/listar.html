@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Materias por créditos</title>
+</head>
+
+<body>
+
+    <h1>Materias encontradas</h1>
+
+    <h3>
+        Materias con
+        <span th:text="${creditos}"></span>
+        créditos
+    </h3>
+    
+    <ul>
+
+        <li th:each="materia : ${materias}">
+
+            <strong th:text="${materia.nombre}"></strong>
+
+            <p th:text="${materia.desc}"></p>
+
+            <p>
+                Créditos:
+                <span th:text="${materia.credit}"></span>
+            </p>
+
+        </li>
+
+    </ul>
+
+    <p th:if="${#lists.isEmpty(materias)}">
+        No se encontraron materias.
+    </p>
+
+</body>
+</html>
